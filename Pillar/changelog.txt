@@ -1,0 +1,155 @@
+===================================================================
+v 1.4.1 - 23 October 2016
+-------------------------------------------------------------------
+FIX    - Nav menu saving is fixed in Variant
+          * Navs auto-update across pages
+
+UPDATE - Twitter feeds no longer need Widget IDs.  See docs.
+          * New pages use data-feed-name instead of data-widget-id.
+          * Old widget IDs will still work (no need to change html)
+
+UPDATE - Switched Pie chart plugin so charts now work in Firefox.
+UPDATE - Smoothscroll plugin updated, no need to alter any HTML.
+
+NEW    - Better pages management in Variant:
+          * Pages can be renamed
+          * Added a “New Page” button to start blank new page
+          * The user now operates in a saved page at all times
+
+FIX    - Form redirect data attribute output from Variant fixed
+FIX    - Colour scheme choice is applied properly to exported pages
+FIX    - Page title is applied properly to all exported pages
+
+Files affected:
+-------------------------------------------------------------------
+UPDATE - variant/js/variant.js
+FIX    - variant/builder.html
+UPDATE - js/twitterfetcher.min.js
+UPDATE - added js/easypiechart.min.js
+UPDATE - all twitter feed divs now have data-feed-name attribute
+ 
+===================================================================
+
+
+===================================================================
+v 1.4.0 - 19 August 2016
+-------------------------------------------------------------------
+NEW    - Google Analytics Tracking ID input in Variant
+NEW    - Page meta description input in Variant
+NEW    - Added Wedding layout
+
+
+Files affected:
+-------------------------------------------------------------------
+NEW    - home-niche-wedding.html
+UPDATE - renamed variant/js/init.js to variant.js
+
+ 
+===================================================================
+
+
+===================================================================
+v 1.3.1 - 5 August 2016
+-------------------------------------------------------------------
+NEW    - Less CSS files included in package for ultimate tweakage
+NEW    - Show any modal by its id when #modal-id is appended to URL
+NEW    - Split cover section added to Variant
+FIX    - Masonry Filters fixed for non-ASCII characters
+UPDATE - Masonry filters now display sorted alphabetically
+
+
+
+===================================================================
+v 1.3.0 - 22 July 2016
+-------------------------------------------------------------------
+NEW    - Added new home layout (home-business-agency-2.html)
+NEW    - Added new home layout (home-niche-politician.html)
+NEW    - Added 5 new blocks to Variant
+UPDATE - Added overlap capability to relevant sections in Variant
+
+
+Files affected:
+-------------------------------------------------------------------
+NEW    - home-landing-listing-1.html
+NEW    - home-niche-politician.html
+UPDATE - variant/builder.html
+UPDATE - css/theme-*.css
+FIX    - variant/js/init.js
+
+
+===================================================================
+v 1.2.0 - 7 July 2016
+-------------------------------------------------------------------
+NEW    - Added new home layout (home-landing-listing-1.html)
+NEW    - Added 2 new blocks to Variant
+UPDATE - Added ‘show on mobile only’ option to Variant
+FIX    - Safari back button cache issue
+FIX    - Improved responsive behaviour of Card elements
+FIX    - Removed redundant data-animation = fade option
+FIX    - Improved responsive behaviour of Login and Signup screens
+FIX    - Multi-column dropdown menu positioning issue
+FIX    - Two word filters on masonry galleries issue
+FIX    - Removed stray .vpe classes from Variant output
+FIX    - Variant not adding section in Safari
+
+
+Files affected:
+-------------------------------------------------------------------
+NEW    - home-landing-listing-1.html
+UPDATE - js/scripts.js
+UPDATE - variant/builder.html
+UPDATE - css/theme-*.css
+FIX    - variant/js/init.js
+
+ 
+===================================================================
+
+
+===================================================================
+v 1.1.0 - 9 June 2016
+-------------------------------------------------------------------
+NEW    - Added slide-out nav menu
+NEW    - Added stacked nav menu
+NEW    - Added corporate layout (home-business-corporate.html)
+NEW    - Added checkout and cart layouts for shop
+NEW    - Added new sections to Variant
+NEW    - Added blog sidebar section to Variant
+FIX    - Local video source editable in Variant
+FIX    - Copyright text in footers editable in Variant
+UPDATE - Modals now scrollable when content exceeds window height
+
+
+Files affected:
+-------------------------------------------------------------------
+NEW    - home-business-corporate.html
+NEW    - shop-cart.html
+NEW    - shop-checkout.html
+FIX    - variant/js/init.js
+UPDATE - elements-navigation.html
+UPDATE - js/scripts.js
+UPDATE - variant/builder.html
+
+ 
+===================================================================
+
+
+===================================================================
+v 1.0.1 - 2 June 2016
+-------------------------------------------------------------------
+FIX    - Added custom.css to allow style overrides
+FIX    - Videos in galleries are now editable in Variant
+
+
+Files affected:
+-------------------------------------------------------------------
+NEW    - css/custom.css
+UPDATE - variant/builder.html
+UPDATE - variant/js/init.js
+
+ 
+===================================================================
+
+
+===================================================================
+v 1.0.0 - INITAL RELEASE
+-------------------------------------------------------------------
