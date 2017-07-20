@@ -1,0 +1,122 @@
+
+<!-- Add mentor details to database -->
+
+<html>
+    <head>
+        <script src="../jquery-3.2.1.min.js"></script>
+        <link href="../select2.min.css" rel="stylesheet"/>
+        <script src="../select2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../jquery.datepick.css">
+        <script type="text/javascript" src="../jquery.plugin.js"></script>
+        <script type="text/javascript" src="../jquery.datepick.js"></script>
+          <link rel="stylesheet" type="text/css" href="../addStyle.css"/>
+    </head>
+    <body>
+    <div id="main">
+         <div id="addMentor" style="border:2px solid black; margin :20px;padding:20px;">
+            <form   method="post" enctype="multipart/form-data" id="formData">
+                <p>Name</p>
+                <input required type="text" name="Name" ></input>
+                <p>Description </p>
+                <textarea  name="Description"  ></textarea>
+                <p>Select image to upload:</p>
+                <div id="photo">
+                  <span><input type="file" name="image" id="fileToUpload" ></input></span>
+                  <div id="preview-image"><img src="../noImage.png" style="height:200px;width:200px;" id="imgToShow"></div>
+                </div>
+                </br></br>
+                <p>Key Area</p>
+                <textarea name="Key_Area"  ></textarea>
+                <p>Industry</p>
+                <textarea name="Industry"  ></textarea>
+                <p>Date</p>
+                <input name="Date"  id="Date"></input>
+                <p>Publisher</p>
+                <textarea name="Publisher"  ></textarea>
+                <button type="submit" value="Submit" id="Submit" name="submitForm">Submit</buttton>
+            </form>
+
+        </div>
+
+       </div>
+        <script>
+        $(document).ready(function(){
+          $('#Date').datepick({dateFormat: 'yyyy-mm-dd'});
+
+          function readURL(input) {                           //Function to preview image before uploading
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              $('#imgToShow').attr('src',e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+          }
+        }
+
+        $("#fileToUpload").change(function(){
+            readURL(this);
+          });
+
+
+
+          var dontAdd=1;                                              //This is also stupid .So, at the end.
+          var blogUniqueId;
+          var imgPath;                                                //The path where the image is stored.
+          var submit=1;
+          $('#formData').on("submit",function(e){
+              var form=$('#formData');
+
+              e.preventDefault();
+
+              $.ajax({                                            //request a unique id for the mentor
+                type:'Post',
+                url:'requestUniqueId.php',
+                data:{blogRequest:1},
+                async:false,
+                success(id)
+                {
+                  blogUniqueId="BLG_"+id;
+
+                }
+              });
+
+              var img = new FormData();                                   //Upload image
+              img.append('image', $('#fileToUpload').prop('files')[0]);  //The image is saved as "Mentorid--date.etension"
+              img.append('b',blogUniqueId);                           //Therefore mentor Id is also sent
+              $.ajax({
+                type: 'POST',
+                processData: false,
+                contentType: false,
+                data:img,
+                url: 'checkImage.php',
+                async:false,
+                success: function(Data){
+                        imgPath=Data;
+                },
+                error:function(data){
+                }
+              });
+
+              var data=form.serialize();
+
+
+
+               e.preventDefault();
+               $.ajax({                                     //data is sent to enter into the database
+                  type:form.attr('method'),
+                  url:'addBlogToDb.php',
+                  data:{formdata:data,i:imgPath,b:blogUniqueId},
+                  async:false,
+                  success:function(data){
+                    alert("Record was succesfully inserted with Id:"+blogUniqueId);
+                    $('#imgToShow').attr('src','../noImage.png');
+                     $('#formData')[0].reset();
+                  }
+              });
+
+
+          });
+        });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+
+
+#e2
+{
+  position:relative;
+  width:50%;
+}
+button
+{
+  display: inline-block;
+  border-radius: 4px;
+  background-color: green;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  width: 90px;
+  height: 30px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+p
+{
+  font-size:15px;
+  margin-left:20px;
+  font-weight: bold;
+}
+
+input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=file] {
+    margin-left:20px;
+    display: inline-block;
+}
+
+button[type=submit] {
+    width: 20%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin-left: 40%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height:60px;
+}
+#preview-image
+{
+  margin-left: 20%;
+}
+#upload-image
+{
+  width: 140px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin-left: 20%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height:60px;
+  display:inline-block;
+}
+textarea {
+    width: 50%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+    
+}
+
+button[type=submit]:hover {
+    background-color: #45a049;
+}
